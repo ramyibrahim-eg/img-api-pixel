@@ -1,0 +1,294 @@
+/* Copyrights - disgin.website */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+body {
+  background: #2e2e2e;
+}
+section.search {
+  background: #eee;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 0 0 5px 5px #6a67ce;
+}
+
+.search-box {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+}
+
+i.fa.fa-search {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  font-size: 2rem;
+  color: #8d8d8d;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+input,
+button,
+i {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-box input {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery .images {
+  columns: 5 340px;
+  gap: 15px;
+  margin-top: 20px;
+  max-width: 95%;
+}
+
+.images .card {
+  display: flex;
+  position: relative;
+  list-style: none;
+  margin-bottom: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px #fff;
+}
+
+.images .card .details {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  border: 1px solid #ffffff90;
+}
+
+.photographer {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.photographer i {
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+
+.details .photographer span {
+  font-size: 1.05rem;
+}
+
+.card .details button {
+  padding: 3px 8px;
+  cursor: pointer;
+  font-size: 2rem;
+  background: #fff;
+}
+
+.images img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.gallery .load-more {
+  margin: 10px auto;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background: #8a6cff;
+}
+.gallery .load-more.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.lightbox.show {
+  display: block;
+}
+
+.wrapper .fa-arrow-left,
+.wrapper .fa-arrow-right {
+  position: fixed;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  background: #8a6cff;
+  display: inline-block;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.wrapper .fa-arrow-right {
+  right: 0;
+}
+
+.wrapper .fa-arrow-left {
+  left: 0;
+}
+
+.lightbox .wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+  padding: 20px;
+  max-width: 850px;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .photographer {
+  color: #333;
+}
+
+header .photographer i {
+  font-size: 1.7rem;
+}
+
+header .photographer span {
+  font-size: 1.2rem;
+}
+
+header .buttons i {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  background: #8a6cff;
+  display: inline-block;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.buttons i:last-child {
+  margin-left: 10px;
+  background: #6c757d;
+}
+
+.preview-img {
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.wrapper .preview-img .img {
+  max-width: 50vh;
+  max-height: 90vh;
+}
+
+.preview-img .img img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#buttonup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999999;
+  background: transparent;
+  border: 2px solid #303030;
+  border-radius: 50px;
+  padding: 10px 5px;
+  cursor: pointer;
+  display: none;
+  animation: topBut 0.8s infinite alternate;
+}
+
+i.fa.fa-angle-double-up {
+  color: #303030;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+@keyframes topBut {
+  0% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 30px;
+  }
+}
+
+.div1 {
+  height: 80vh;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20%;
+}
+.div2 {
+  height: 80vh;
+  background: #f00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20%;
+}
+.div3 {
+  height: 80vh;
+  background: #0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20%;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #b7b7b7;
+}
+::-webkit-scrollbar-thumb {
+  background: #6a67ce;
+  border-radius: 20px;
+}
